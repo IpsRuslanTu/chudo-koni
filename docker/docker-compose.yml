@@ -55,5 +55,8 @@ services:
     volumes:
       - ./../client:/var/www/project
     working_dir: /var/www/project
+    entrypoint: ["yarn", "start"]
+    ports:
+      - "8090:3000"
     networks:
       - chudo-koni-network
