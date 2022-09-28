@@ -1,26 +1,54 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import * as React from 'react'
+import AppBar from '@mui/material/AppBar'
+import Box from '@mui/material/Box'
+import Toolbar from '@mui/material/Toolbar'
+import Typography from '@mui/material/Typography'
+import Container from '@mui/material/Container'
+import Button from '@mui/material/Button'
+import AdbIcon from '@mui/icons-material/Adb'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Chudo-Koni вперед!!!
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const pages = ['Расписание', 'Цены', 'О нас']
 
-export default App;
+const App = () => (
+    <AppBar position='static'>
+        <Container maxWidth='xl'>
+            <Toolbar disableGutters>
+                <AdbIcon sx={{display: 'flex', mr: 1}}/>
+                <Typography
+                    variant='h6'
+                    noWrap
+                    component='a'
+                    href='/'
+                    sx={{
+                        mr: 2,
+                        fontFamily: 'monospace',
+                        fontWeight: 700,
+                        letterSpacing: '.3rem',
+                        color: 'inherit',
+                        textDecoration: 'none',
+                    }}
+                >
+                    ЧУДО-КОНИ
+                </Typography>
+
+                <Box sx={{flexGrow: 1, display: 'flex'}}>
+                    {pages.map((page) => (
+                        <Button
+                            key={page}
+                            sx={{my: 2, color: 'white', display: 'block'}}
+                        >
+                            {page}
+                        </Button>
+                    ))}
+                </Box>
+
+                <Box sx={{flexGrow: 0}}>
+                    <Button color="inherit">Вход</Button>
+                    <Button color="inherit">Регистрация</Button>
+                </Box>
+            </Toolbar>
+        </Container>
+    </AppBar>
+)
+
+export default App
