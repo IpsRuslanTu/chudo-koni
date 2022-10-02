@@ -1,0 +1,58 @@
+@use '../../mixins' as *;
+
+@mixin sidebar() {
+  .sidebarContent {
+    box-sizing: border-box;
+    width: $sidebarWidth;
+    height: 100%;
+    background-color: #111827;
+    color: #fff;
+  }
+}
+
+.sidebar {
+  flex-shrink: 0;
+
+  @include lg {
+    width: $sidebarWidth
+  }
+}
+
+.sidebarXs {
+  display: block;
+
+  @include lg {
+    display: none;
+  }
+
+  @include sidebar;
+}
+
+.sidebarLg {
+  display: none;
+
+  @include lg {
+    display: block;
+  }
+
+  @include sidebar;
+}
+
+.icon {
+  width: 3rem !important;
+  height: 3rem !important;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  background-color: rgba(#fff, 0.04);
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  border-radius: .5rem;
+}
+
+.navItem:hover {
+  background-color: rgba(#fff, 0.08) !important;
+}
+

@@ -1,0 +1,15 @@
+@use '../../mixins' as *;
+
+.appBar {
+  @include sm {
+    margin-left: $sidebarWidth;
+  }
+
+  @include dynamicWidth;
+}
+
+.iconButton {
+  @include lg {
+    display: none;
+  }
+}

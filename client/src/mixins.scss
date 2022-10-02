@@ -1,0 +1,21 @@
+$sidebarWidth: 18.75rem;
+
+@mixin sm() {
+  @media (min-width: 600px) {
+    @content;
+  }
+}
+
+@mixin lg() {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin dynamicWidth() {
+  @include lg {
+    width: calc(100% - $sidebarWidth) !important;
+  }
+}
+
+
